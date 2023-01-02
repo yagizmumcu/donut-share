@@ -24,7 +24,7 @@ export function Dashboard() {
                                 className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-zinc-700 dark:border-pink-800">
                                 <h1 className="mb-2 text-7xl font-bold tracking-tight text-gray-900 dark:text-white">Abortion
                                     should be legal</h1>
-                                <div className="flex space-x-40">
+                                <div className="flex space-x-40 py-24 ">
                                     <button type="button"
                                             className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Green
                                     </button>
