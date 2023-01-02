@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {initializeApp} from '../firebaseConfig';
 import auth from '../firebaseConfig'
+import { Link, useNavigate } from "react-router-dom";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -8,19 +9,24 @@ import {
     updateProfile,
 } from "firebase/auth";
 import logo from "../logo.png"
+import donut from "../donut.gif";
 
 export function Register(props) {
+    const navigate = useNavigate();
 
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (event) => {
+    async function handleSubmit(event){
         event.preventDefault();
-        register(email,password);
-        console.log(email)
-        console.log(password)
-        // validate form data and submit it
+        
+        try {
+            await register(email,password);
+            navigate('/dashboard');
+        } catch(error) {
+            alert("sadfasdf");
+        }
     };
 
     function register(email, password) {
@@ -28,9 +34,7 @@ export function Register(props) {
     }
 
     return (
-        
         <section className="bg-gray-50 dark:bg-zinc-900">
-            
             <div className="dark flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <div
                     className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-zinc-800 dark:border-zinc-700">
