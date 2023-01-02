@@ -9,6 +9,7 @@ import {
     updateProfile,
 } from "firebase/auth";
 import logo from "../logo.png"
+import donut from "../donut.gif";
 
 export function Register(props) {
     const navigate = useNavigate();
@@ -26,11 +27,6 @@ export function Register(props) {
         } catch(error) {
             alert("sadfasdf");
         }
-
-        console.log(email)
-        console.log(password)
-
-        // validate form data and submit it
     };
 
     function register(email, password) {
@@ -38,9 +34,7 @@ export function Register(props) {
     }
 
     return (
-        
         <section className="bg-gray-50 dark:bg-zinc-900">
-            
             <div className="dark flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                 <div
                     className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-zinc-800 dark:border-zinc-700">
