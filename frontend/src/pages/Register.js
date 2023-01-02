@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {initializeApp} from '../firebaseConfig';
 import auth from '../firebaseConfig'
+import { Link, useNavigate } from "react-router-dom";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -10,16 +11,25 @@ import {
 import logo from "../logo.png"
 
 export function Register(props) {
+    const navigate = useNavigate();
 
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (event) => {
+    async function handleSubmit(event){
         event.preventDefault();
-        register(email,password);
+        
+        try {
+            await register(email,password);
+            navigate('/dashboard');
+        } catch(error) {
+            alert("sadfasdf");
+        }
+
         console.log(email)
         console.log(password)
+
         // validate form data and submit it
     };
 
