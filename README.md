@@ -1,3 +1,7 @@
+<p align="center">
+    <img width="200" src="https://i.ibb.co/k364DmH/donut.gif" alt="Material Bread logo">
+</p>
+
 [![](https://i.ibb.co/9rMY14h/banner.png)](https://i.ibb.co/9rMY14h/banner.png)
 
 ### 
@@ -20,6 +24,12 @@
 - React
 - Firebase 
 
- ![](https://i.ibb.co/k364DmH/donut.gif)
+
+
+
+
+
+
+
 
 
