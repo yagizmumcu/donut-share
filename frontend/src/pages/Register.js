@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import {initializeApp} from './firebaseConfig';
-import auth from './firebaseConfig'
+import {initializeApp} from '../firebaseConfig';
+import auth from '../firebaseConfig'
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
     updateProfile,
 } from "firebase/auth";
-import logo from "./logo.png"
+import logo from "../logo.png"
 
 export function Register(props) {
 

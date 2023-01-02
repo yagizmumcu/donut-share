@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import {Register} from './Register'
-import {Navbar} from './Navbar'
-import {Dashboard} from './Dashboard'
+import {Register} from './pages/Register'
+import {Navbar} from './components/shared/Navbar'
+import {Dashboard} from './pages/Dashboard'
 function App() {
   return (
       <div>
