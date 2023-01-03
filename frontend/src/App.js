@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Control } from './pages/control';
 import { Moderator_Panel } from './pages/control';
 import { Admin_Panel } from './pages/Admin_panel';
+import {UserList} from './pages/UserList';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                   <Route path="/control" element={<Control />}></Route>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/admin" element={<Admin_Panel />} />
+                  <Route path="/list" element={<UserList/>}></Route>
               </Routes>
           </BrowserRouter>
       </div>
