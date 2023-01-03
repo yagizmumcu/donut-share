@@ -1,0 +1,35 @@
+ .user-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-item {
+    display: flex;
+    align-items: center;
+    margin: 16px 0;
+  }
+  
+  .user-email {
+    font-size: 18px;
+    margin-right: 16px;
+  }
+  
+  .disable-button {
+    font-size: 16px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .disable-button:hover {
+    background-color: #cc0000;
+  }
+  
+  .disable-button:active {
+    background-color: #990000;
+  }
+  

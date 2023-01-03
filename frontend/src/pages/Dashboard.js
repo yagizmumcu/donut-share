@@ -3,15 +3,37 @@ import logo from '../logo.png'
 import { Loader } from "../components/shared/Loader";
 import { Navbar } from "../components/shared/Navbar";
 import { RateRow } from "../components/Dashboard/RateRow";
+import DisableUser from "./disableUser";
+import {initializeApp} from '../firebaseConfig';
+import axios from 'axios';
+
+import auth from '../firebaseConfig'
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    updateProfile,
+} from "firebase/auth";
+import { getAuth } from "firebase/auth";
+
 export function Dashboard() {
     const [loading, setLoading] = useState(false);
+    const [counter, setCounter] = useState(25);
+    const [users, setUsers] = useState([])
 
     useEffect(() => {
+        axios.get('http://localhost:3000/users').then((res) => {
+            console.log(res)
+        }).catch((error) => {
+            console.error(error);
+        });
         setLoading(true)
         setTimeout(() => {
             setLoading(false)
         }, 2000)
     }, [])
+
+
 
     return (
         loading ? (<Loader />) :
