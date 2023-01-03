@@ -7,7 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Control } from './pages/control';
 import { Moderator_Panel } from './pages/Moderator_panel';
 import { Admin_Panel } from './pages/Admin_panel';
+
 import { Add_moderator } from './pages/Add_moderator';
+import {UserList} from './pages/UserList';
+
 
 
 function App() {
@@ -22,7 +25,7 @@ function App() {
                   <Route path="/admin" element={<Admin_Panel />} />
                   <Route path="/moderator" element={<Moderator_Panel />} />
                   <Route path="/add_mod" element={<Add_moderator />} />
-                  
+                  <Route path="/list" element={<UserList/>}></Route>
               </Routes>
           </BrowserRouter>
       </div>
