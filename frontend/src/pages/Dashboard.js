@@ -3,7 +3,6 @@ import logo from '../logo.png'
 import { Loader } from "../components/shared/Loader";
 import { Navbar } from "../components/shared/Navbar";
 import { RateRow } from "../components/Dashboard/RateRow";
-import DisableUser from "./disableUser";
 import {initializeApp} from '../firebaseConfig';
 import axios from 'axios';
 
@@ -16,10 +15,11 @@ import {
 } from "firebase/auth";
 import { getAuth } from "firebase/auth";
 
-export function Dashboard() {
+export function Dashboard(props) {
     const [loading, setLoading] = useState(false);
     const [counter, setCounter] = useState(25);
     const [users, setUsers] = useState([])
+
 
     useEffect(() => {
         axios.get('http://localhost:3000/users').then((res) => {
@@ -41,6 +41,7 @@ export function Dashboard() {
                 <div>
                     <Navbar />
                     <section className="bg-gray-50 dark:bg-zinc-900">
+                        <h1>adsasasdd {props.data}</h1>
                         <div
                             className="dark flex flex-row gap-48 items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                             <div
@@ -49,10 +50,10 @@ export function Dashboard() {
                                     should be legal</h1>
                                 <div className="flex space-x-40 py-24 ">
                                     <button type="button"
-                                        className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">red
+                                        className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Agree
                                     </button>
                                     <button type="button"
-                                        className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Red
+                                        className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Disagree
                                     </button>
                                 </div>
                             </div>
@@ -103,7 +104,7 @@ export function Dashboard() {
                                                 decisions for themselves and their families in regards to their economic stability.
                                                 <RateRow />
                                             </th>
-                                            <td className="py-4 px-6">
+                                            <td className="py-4 px-6 font-medium text-gray-900  dark:text-white">
                                                 There are also economic arguments in favor of legal abortion. Unplanned pregnancies
                                                 can have significant financial consequences for women, particularly if they are not
                                                 able to afford to raise a child. Allowing women to have the option of abortion can
@@ -122,7 +123,7 @@ export function Dashboard() {
                                                 decisions for themselves and their families in regards to their economic stability.
                                                 <RateRow />
                                             </th>
-                                            <td className="py-4 px-6">
+                                            <td className="py-4 px-6 font-medium text-gray-900  dark:text-white">
                                                 There are also economic arguments in favor of legal abortion. Unplanned pregnancies
                                                 can have significant financial consequences for women, particularly if they are not
                                                 able to afford to raise a child. Allowing women to have the option of abortion can
