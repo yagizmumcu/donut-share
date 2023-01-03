@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import logo from '../logo.png'
 import {Loader} from "../components/shared/Loader";
-import {Navbar} from "../components/shared/Navbar";
+import {Control_Navbar} from "../components/shared/control_navbar";
 export function Control() {
     const [loading, setLoading] = useState(false);
     const [activeTab, setActiveTab] = useState('profile');
@@ -17,41 +17,12 @@ export function Control() {
     }, [])
 
     return(
+      <section className="bg-gray-50 dark:bg-zinc-900">
+      <Control_Navbar/>
+      
+      <div className="dark flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      </div>
+  </section>
         
-        <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
-        <li className="mr-2">
-          <a
-            href="#"
-            id="profile"
-            aria-current="page"
-            className={`inline-block p-4 text-blue-600 bg-gray-100 rounded-t-lg ${activeTab === 'profile' ? 'active' : ''} dark:bg-gray-800 dark:text-blue-500`}
-            onClick={handleTabClick}
-          >
-            Topic Panel
-          </a>
-        </li>
-        <li className="mr-2">
-          <a
-            href="admin"
-            id="dashboard"
-            className={`inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 ${activeTab === 'dashboard' ? 'active' : ''}`}
-            onClick={handleTabClick}
-          >
-            Admin Panel
-          </a>
-        </li>
-        <li className="mr-2">
-          <a
-            href="#"
-            id="settings"
-            className={`inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 ${activeTab === 'settings' ? 'active' : ''}`}
-            onClick={handleTabClick}
-          >
-            Moderator Panel
-          </a>
-        </li>
-        
-       
-      </ul>
     );
 }
